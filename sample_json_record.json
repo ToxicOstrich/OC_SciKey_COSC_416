@@ -1,0 +1,79 @@
+[
+  {
+    "docid":"1002652",
+    "halId_s":"hal-01002652",
+    "title_s":"Urban stormwater source control policies: why and how?",
+    "abstract_s":"Stormwater source control is becoming a common strategy for urban stormwater management in many countries. It relies on regulations or other policy instruments compelling or inciting to implement, for each new urban development, small-scale facilities to locally store and manage stormwater. Local authorities that pioneered source control since the 1980s have already observed that small-scale facilities systematically implemented over a catchment are able to influence its hydrological behaviour. This capability is the main strength of source control, as it allows compensation for the negative effects of urbanization. Yet, it also represents its main risk: if initial decision-making is not sufficiently accurate, source control can produce long term negative effects. Because of its current spreading, source control will acquire an increasing role as a driver of hydrological changes in urban catchments, and the directions of these changes depend on current policy-making practices. This paper presents an analysis and a critical discussion of the main objectives that policy-makers attribute to stormwater source control. The investigation is based on a sample of French case studies, completed by a literature review for international comparison. It identifies four main objectives, some typical of urban stormwater management and some more innovative: flood reduction, receiving waters protection, sustainable development, costs reduction. The discussion focuses on how current policy-making practices are able to translate these objectives in concrete policy instruments, and on which knowledge and tools could improve this process. It is shown that for some objectives, basic knowledge is available, but the creation of policy instruments effective at the catchment scale and adapted to local conditions is still problematic. For others, substantial lacks of knowledge exist, casting doubts on long term effectiveness of current policy instruments. Research directions are identified to improve source control policies and thus the future hydrologic behaviour of many urban catchments.",
+    "domain_codes":"shs.envir",
+    "discipline":"Civil Engineering",
+    "url_primary":"https:\/\/hal.science\/hal-01002652",
+    "authFirstName_s":[
+      "Guido",
+      "José-Frédéric",
+      "Bruno"
+    ],
+    "authLastName_s":[
+      "Petrucci",
+      "Deroubaix",
+      "Tassin"
+    ],
+    "authQuality_s":[
+      "aut",
+      "aut",
+      "aut"
+    ],
+    "authFullNameIdFormPerson_fs":[
+      "Guido Petrucci_FacetSep_557364-772577",
+      "José-Frédéric Deroubaix_FacetSep_15954-10755",
+      "Bruno Tassin_FacetSep_15374-3343"
+    ],
+    "authIdHasStructure_fs":[
+      "557364-772577_FacetSep_Guido Petrucci_JoinSep_155441_FacetSep_Laboratoire Eau, Environnement et Systèmes Urbains",
+      "557364-772577_FacetSep_Guido Petrucci_JoinSep_148117_FacetSep_AgroParisTech",
+      "557364-772577_FacetSep_Guido Petrucci_JoinSep_301243_FacetSep_Université Paris-Est Marne-la-Vallée",
+      "557364-772577_FacetSep_Guido Petrucci_JoinSep_301545_FacetSep_École nationale des ponts et chaussées",
+      "557364-772577_FacetSep_Guido Petrucci_JoinSep_420786_FacetSep_Université Paris-Est Créteil Val-de-Marne - Paris 12",
+      "557364-772577_FacetSep_Guido Petrucci_JoinSep_303465_FacetSep_Vrije Universiteit Brussel [Bruxelles]",
+      "15954-10755_FacetSep_José-Frédéric Deroubaix_JoinSep_155441_FacetSep_Laboratoire Eau, Environnement et Systèmes Urbains",
+      "15954-10755_FacetSep_José-Frédéric Deroubaix_JoinSep_148117_FacetSep_AgroParisTech",
+      "15954-10755_FacetSep_José-Frédéric Deroubaix_JoinSep_301243_FacetSep_Université Paris-Est Marne-la-Vallée",
+      "15954-10755_FacetSep_José-Frédéric Deroubaix_JoinSep_301545_FacetSep_École nationale des ponts et chaussées",
+      "15954-10755_FacetSep_José-Frédéric Deroubaix_JoinSep_420786_FacetSep_Université Paris-Est Créteil Val-de-Marne - Paris 12",
+      "15374-3343_FacetSep_Bruno Tassin_JoinSep_155441_FacetSep_Laboratoire Eau, Environnement et Systèmes Urbains",
+      "15374-3343_FacetSep_Bruno Tassin_JoinSep_148117_FacetSep_AgroParisTech",
+      "15374-3343_FacetSep_Bruno Tassin_JoinSep_301243_FacetSep_Université Paris-Est Marne-la-Vallée",
+      "15374-3343_FacetSep_Bruno Tassin_JoinSep_301545_FacetSep_École nationale des ponts et chaussées",
+      "15374-3343_FacetSep_Bruno Tassin_JoinSep_420786_FacetSep_Université Paris-Est Créteil Val-de-Marne - Paris 12"
+    ],
+    "authIdHal_s":[
+      "jose-frederic-deroubaix",
+      "bruno-tassin"
+    ],
+    "structIdName_fs":[
+      "155441_FacetSep_Laboratoire Eau, Environnement et Systèmes Urbains",
+      "148117_FacetSep_AgroParisTech",
+      "301243_FacetSep_Université Paris-Est Marne-la-Vallée",
+      "301545_FacetSep_École nationale des ponts et chaussées",
+      "420786_FacetSep_Université Paris-Est Créteil Val-de-Marne - Paris 12",
+      "303465_FacetSep_Vrije Universiteit Brussel [Bruxelles]"
+    ],
+    "structName_s":[
+      "Laboratoire Eau, Environnement et Systèmes Urbains",
+      "AgroParisTech",
+      "Université Paris-Est Marne-la-Vallée",
+      "École nationale des ponts et chaussées",
+      "Université Paris-Est Créteil Val-de-Marne - Paris 12",
+      "Vrije Universiteit Brussel [Bruxelles]"
+    ],
+    "docType_s":"COMM",
+    "classification_s":null,
+    "doiId_s":null,
+    "isbn_id":null,
+    "keyword_s":[
+      "Stormwater management",
+      "Urban areas",
+      "Source control",
+      "Policy-making"
+    ]
+  }
+]
