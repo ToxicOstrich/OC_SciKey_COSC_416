@@ -11,7 +11,7 @@ echo "---"
 START_TIME=$(date +%s)
 
 for ((i=1; i<=SESSIONS; i++)); do
-  sqlplus -s "${DB_USER}/${DB_PASS}@${DB_CONN} as sysdba" @read_stress_test.sql > "read_stress_session_${i}.log" 2>&1 &
+  sqlplus -s "${DB_USER}/${DB_PASS}@${DB_CONN}" @read_stress_test.sql > "read_stress_session_${i}.log" 2>&1 &
 done
 
 wait
