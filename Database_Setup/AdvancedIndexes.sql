@@ -24,10 +24,6 @@ CREATE INDEX idx_document_hal_id
     ON document(hal_id_s)
     LOCAL TABLESPACE scikey_index;
 
-CREATE INDEX idx_document_hal_doc_id
-    ON document(hal_document_id)
-    LOCAL TABLESPACE scikey_index;
-
 CREATE INDEX idx_document_doi
     ON document(doi_id)
     LOCAL TABLESPACE scikey_index;
