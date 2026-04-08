@@ -32,6 +32,11 @@ Operating System
     # Verify
     grep HugePages /proc/meminfo
 
+Set memory locking limits for the Oracle user. Open `/etc/security/limits.conf` in your text editor of choice and add:
+
+        oracle   soft   memlock   unlimited
+        oracle   hard   memlock   unlimited
+
 Oracle
 
     -- Connect as SYSDBA
