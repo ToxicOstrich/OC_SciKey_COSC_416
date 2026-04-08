@@ -23,7 +23,7 @@ The Oracle 19C Database installation was run on Oracle Linux 8. Download the ora
 ## Tuning Initialization Parameters
 **Huge Pages**
 
-Operating System Side
+Operating System
 
     # Calculate and set huge pages
     echo "vm.nr_hugepages = 3850" >> /etc/sysctl.conf
@@ -132,20 +132,28 @@ Navigate to either the Full_HAL or UPEC_Only directory, depending on which datas
 **In main.py:**
 
 Filter disciplines:
-`FIELD ="Civil Engineering" #"Chemical Engineering", "Computer Science","Political Science","Marketing","Civil Engineering"`
+
+    FIELD ="Civil Engineering" #"Chemical Engineering", "Computer Science","Political Science","Marketing","Civil Engineering"
+
 and
-`if discipline != FIELD:
-     continue
-`
+
+    if discipline != FIELD:
+         continue
+
 
 **In apimodule.py**
 
-Language filter for English only
-`LANG_FILTER  = 'language_s:en'  # English only`
-`"fq": [LANG_FILTER, KEYWORD_FQ],   # English + must have keywords`
+Language filter:
 
-`print("HAL English only:", probe([LANG_FILTER]))
- print("HAL English + keywords:", probe([LANG_FILTER, KEYWORD_FQ]))`
+    LANG_FILTER  = 'language_s:en'  # English only
+    
+
+    "fq": [LANG_FILTER, KEYWORD_FQ],   # English + must have keywords
+
+If language filter is disabled, the following print statements must be disabled:
+
+    print("HAL English only:", probe([LANG_FILTER]))
+    print("HAL English + keywords:", probe([LANG_FILTER, KEYWORD_FQ]))
        
 The script is executed as follows:
 `python main.py`
