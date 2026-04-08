@@ -17,7 +17,7 @@ This folder contains the required instructions to setup the Oracle Data Warehous
 
 # Database Creation
 
-## Oracle RDBMS installer
+## Oracle RDBMS Installer
 The Oracle 19C Database installation was run on Oracle Linux 8. Download the oracle-database-preinstall-19c package and run the installer (either in GUI or silent mode). Create the database using Oracle Database Setup Wizard, with a global database name of scikey.orcl.ca, SID scikey, a pluggable database pdb, a 16KB block size, and about 9.2 GB of combined SGA/PGA using ASMM, followed by executing the root scripts the installer generates. Then configure post-install settings like enabling OMF and setting the PDB to auto-start. Finally, edit your bash profile to ensure all environment variables are set.
 
 ## Tuning Initialization Parameters
