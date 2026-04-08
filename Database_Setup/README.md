@@ -34,8 +34,8 @@ Operating System
 
 Set memory locking limits for the Oracle user. Open `/etc/security/limits.conf` in your text editor of choice and add:
 
-        oracle   soft   memlock   unlimited
-        oracle   hard   memlock   unlimited
+    oracle   soft   memlock   unlimited
+    oracle   hard   memlock   unlimited
 
 Oracle
 
