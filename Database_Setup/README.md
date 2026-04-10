@@ -47,7 +47,7 @@ Oracle
     ALTER SYSTEM SET pga_aggregate_target = 1536M SCOPE=SPFILE;
     
     -- Force Oracle to use huge pages (won't start if unavailable)
-    ALTER SYSTEM SET use_large_pages = ONLY SCOPE=SPFILE;
+    ALTER SYSTEM SET use_large_pages = 'ONLY' SCOPE=SPFILE;
     
     -- Restart the instance for SPFILE changes to take effect
     SHUTDOWN IMMEDIATE;
