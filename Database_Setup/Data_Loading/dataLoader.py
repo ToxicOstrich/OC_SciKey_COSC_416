@@ -25,7 +25,9 @@ import oracledb  # python-oracledb (successor to cx_Oracle)
 # ──────────────────────────────────────────────
 # CONFIGURATION  –  edit these before running
 # ──────────────────────────────────────────────
-DB_DSN      = "localhost:1521/pdb"   # host:port/service_name
+DB_DSN      = "localhost:1521/pdb.orcl.ca"   # host:port/service_name
+DB_USER     = "scikey"                        # database username
+DB_PASSWORD = "scikeycosc416"                  # database password
 
 CHUNK_SIZE  = 500   # number of JSON records held in memory at once
 LOG_LEVEL   = logging.INFO
@@ -195,7 +197,7 @@ def get_or_create_author(cur, author_id_hal: str, first_name: str, last_name: st
     return int(out.getvalue()[0])
 
 
-def insert_document(cur, rec: dict, journal_key: int | None) -> int | None:
+def insert_document(cur, rec: dict) -> int | None:
     """
     Insert the document row.  Returns document_key, or None if the document
     already exists (idempotent).
@@ -210,31 +212,35 @@ def insert_document(cur, rec: dict, journal_key: int | None) -> int | None:
         log.debug("Document %s already exists – skipping.", hal_document_id)
         return row[0]
 
+    # classification_s can be a list in some HAL records; take first element
+    classification = rec.get("classification_s")
+    if isinstance(classification, list):
+        classification = classification[0] if classification else None
+
     out = cur.var(oracledb.NUMBER)
     cur.execute(
         """
         INSERT INTO document
             (hal_document_id, hal_id_s, document_type, classification,
              title, abstract, discipline, domain_codes, url_primary,
-             journal_key, doi_id, isbn)
+             doi_id, isbn)
         VALUES
             (:1, :2, :3, :4,
              :5, :6, :7, :8, :9,
-             :10, :11, :12)
-        RETURNING document_key INTO :13
+             :10, :11)
+        RETURNING document_key INTO :12
         """,
         [
             hal_document_id,
             rec.get("halId_s"),
             rec.get("docType_s"),
-            rec.get("classification_s"),
+            classification,
             # title_s can be a list in some HAL records; take first element
             (rec["title_s"][0] if isinstance(rec.get("title_s"), list) else rec.get("title_s")),
             (rec["abstract_s"][0] if isinstance(rec.get("abstract_s"), list) else rec.get("abstract_s")),
             rec.get("discipline"),
             rec.get("domain_codes"),
             rec.get("url_primary"),
-            journal_key,
             rec.get("doiId_s"),
             rec.get("isbn_id"),
             out,
@@ -248,11 +254,8 @@ def insert_document(cur, rec: dict, journal_key: int | None) -> int | None:
 # ──────────────────────────────────────────────────────────────────────────────
 
 def process_record(cur, rec: dict) -> None:
-    # ── Journal (HAL records don't always expose ISSN; extend if yours do) ──
-    journal_key = None  # extend here if your JSON includes journal/issn fields
-
     # ── Document ────────────────────────────────────────────────────────────
-    document_key = insert_document(cur, rec, journal_key)
+    document_key = insert_document(cur, rec)
     if document_key is None:
         return  # already existed; nothing more to do
 
@@ -351,11 +354,11 @@ def process_record(cur, rec: dict) -> None:
 # ──────────────────────────────────────────────────────────────────────────────
 
 def main(filepath: Path) -> None:
-    log.info("Connecting to Oracle at %s using OS authentication …", DB_DSN)
+    log.info("Connecting to Oracle at %s as %s …", DB_DSN, DB_USER)
     connection = oracledb.connect(
+        user=DB_USER,
+        password=DB_PASSWORD,
         dsn=DB_DSN,
-        externalauth=True,
-        mode=oracledb.AUTH_MODE_DEFAULT,
     )
     log.info("Connected.")
 
