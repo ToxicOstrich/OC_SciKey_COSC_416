@@ -182,4 +182,10 @@ Login to sqlplus as the "scikey" user with the command: `sqlplus scikey/scikeyco
 
 Within the sqlplus terminal run the command: `@AdvancedIndexes.sql`
 
+# Materialized Views
 
+Materialized views are added after data loading and indexing so they can precompute frequently used joins and aggregations on the completed dataset. This improves query performance for read-heavy workloads and avoids rebuilding them repeatedly during bulk insertion.
+
+Login to sqlplus as the "scikey" user with the command: `sqlplus scikey/scikeycosc416@localhost:1521/pdb.orcl.ca`
+
+Within the sqlplus terminal run the command: `@MaterializedView.sql`
